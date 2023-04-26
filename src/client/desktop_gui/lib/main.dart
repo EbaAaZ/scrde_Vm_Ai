@@ -15,7 +15,10 @@ main() async {
 
   final shellInto = Platform.environment['MULTIPASS_SHELL_INTO'];
 
-  final windowOptions = WindowOptions(title: shellInto ?? 'Multipass');
+  final windowOptions = WindowOptions(
+    title: shellInto ?? 'Multipass',
+    size: const Size(1500, 800),
+  );
   await windowManager.waitUntilReadyToShow(windowOptions, () async {
     await windowManager.show();
     await windowManager.focus();
